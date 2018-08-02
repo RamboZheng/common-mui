@@ -1,0 +1,16 @@
+.fade-enter-active, .fade-leave-active {
+    transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to {
+    opacity: 0;
+}
+
+.top-leave-active, .top-enter-active{
+    transition: all 0.3s ease; 
+}
+.top-leave-active, .top-enter{
+    height: 0px !important;
+}
+.top-leave, .top-enter-active{
+    height: 100%;
+}

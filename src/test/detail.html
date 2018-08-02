@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="expires" content="0">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport"/>
+<script src="https://www.icity24.cn/icity/apps/static/configflexible.icity.js"></script>
+</head>
+<body>
+<div id="app">
+    <div v-if="type==0">
+        <p></p>
+        <imui2-button type='0'></imui2-button><p></p>
+        <imui2-button type='1'></imui2-button><p></p>
+        <imui2-button type='2'></imui2-button><p></p>
+    </div>
+    <div v-else-if="type==1">
+        <imui2-password placeholder="请输入原密码"></imui2-password>
+    </div>
+    <div v-else-if="type==2">
+        <p></p>
+        <imui2-toggle></imui2-toggle>
+    </div>
+    <div v-else-if="type==104">
+        <p></p>
+        <imui2-source value='济南公积金中心'></imui2-source>
+        <imui2-fixed-source value='济南公积金中心'></imui2-fixed-source>
+    </div>
+    <div v-else-if="type==105">
+        <imui2-search :callback="searchCallback"></imui2-search>
+    </div>
+    <div v-else-if="type==107">
+        <imui2-search2 :callback="searchCallback"></imui2-search2>
+    </div>
+    <div v-else-if="type==106">
+        <imui2-warn type='1' title='提交成功' content='活动已下线，即使提交任务'></imui2-warn>
+    </div>
+    <div v-else-if="type==200">
+        <imui2-menu :data="menuData" name="tmpname"></imui2-menu>
+    </div>
+    <div v-else-if="type==201">
+        <imui2-multi-menu :data="multiMenuData" :callback="onMultiMenu" name="tmpname"></imui2-multi-menu>
+    </div>
+    <div v-else-if="type==300">
+        <imui2-listview class="listview" :onload="onload">
+            <div class="item" slot="content" v-for="i in 20">Hello World {{i}}</div>
+        </imui2-listview>
+    </div>
+    <div v-else-if="type==500">
+        <imui2-arrow :callback="commonCallback">
+            <div slot="content">阿里巴巴中国</div>
+        </imui2-arrow>
+        <imui2-arrow :callback="commonCallback">
+            <div slot='content'>
+                阿里巴巴中国<br/>
+                <font size="1">时间：2018-04-12</font>
+            </div>
+        </imui2-arrow><imui2-arrow :callback="commonCallback">
+            <div slot='content'>阿里巴巴中国</div>
+        </imui2-arrow>
+    </div>
+    <div v-else-if="type==600">
+        <imui2-nav :data="navData" :callback="commonCallback"></imui2-nav>
+    </div>
+    <div v-else-if="type==601">
+        <imui2-nav2 :data="navData" :callback="commonCallback"></imui2-nav2>
+    </div>
+    <div v-else-if="type==700">
+        <imui2-week :callback="commonCallback"></imui2-week>
+    </div>
+    <div v-else-if="type==800">
+        <imui2-rule :content="ruleData" :callback="commonCallback"></imui2-rule>
+    </div>
+    <div v-else-if="type==900">
+        <imui2-agreement name="爱城市网注册协议" ref='agreement' :callback="commonCallback"></imui2-agreement>
+    </div>
+</div>
+</body>
+</html>
